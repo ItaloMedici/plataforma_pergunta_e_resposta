@@ -1,0 +1,24 @@
+{
+  "name": "plataforma_pergunta_e_resposta",
+  "version": "1.0.0",
+  "description": "Plataforma de perguntas e respostas, utilizanod MySql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItaloMedici/plataforma_pergunta_e_resposta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItaloMedici/plataforma_pergunta_e_resposta/issues"
+  },
+  "homepage": "https://github.com/ItaloMedici/plataforma_pergunta_e_resposta",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
