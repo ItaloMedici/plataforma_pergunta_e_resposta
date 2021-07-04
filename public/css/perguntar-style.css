@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,700&display=swap');
+
+body {
+  background-color: #ebebeb;
+}
+
+nav {
+  border-bottom: solid 1px #d3d2d2;
+}
+
+#brand h1{
+  font-size: 1.5em;
+  margin: 0 0 0 15px;
+  font-family: 'Arvo', serif;
+  
+  background-image: linear-gradient(52deg, #e94656, #ffaf7b, #f7c524);
+
+  background-size: 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+.maincard {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.089);
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.card-header h2 {
+  text-align: center;
+  color: rgba(128, 128, 128, 0.801);
+}
+
+.btn-success {
+  background-color: #05be70;
+  border: solid 1px #049a5b;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.btn-success:hover {
+  background-color: #08d57f;
+  border: solid 1px #05be70;
+  box-shadow: 0 0 15px #05be77a8;
+}
+
+.btn-success:focus {
+  background-color: #08d57f;
+  border: solid 1px #05be70;
+  box-shadow: 0 0 7px 3px #0ae49093;
+}
