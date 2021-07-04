@@ -1,0 +1,12 @@
+.headerHome {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.headerHome a {
+  flex: 1;
+  margin-left: 25px;
+  font-size: 25px;
+}
