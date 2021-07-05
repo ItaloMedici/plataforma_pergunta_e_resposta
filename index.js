@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database.js");
-const Pergunta = require("./database/Perguta");
+const Pergunta = require("./database/Pergunta");
+const Resposta = require("./database/Resposta");
 
 // Database
 connection
@@ -45,10 +46,45 @@ app.post("/savequestion", (req, res) => {
   // INSERT INTO Pergunta ...
   Pergunta.create({
     titulo: titulo,
-    descricao: descricao 
+    descricao: descricao
   }).then(() => {
     res.redirect("/");
   })
+});
+
+app.get("/perguntar/:id", (req, res) => {
+  var id = req.params.id;
+
+  Pergunta.findOne({
+    where: {id: id}
+  }).then(pergunta => {
+    if(pergunta != undefined) {
+      Resposta.findAll({
+        where: {perguntaID: pergunta.id},
+        order: [['id', 'DESC']]
+      }).then(resposta => {
+        res.render("pergunta", {
+          perguntas: pergunta,
+          respostas: resposta
+        });
+      });
+    } else {
+      res.redirect("/");
+    }
+  });
+})
+
+app.post("/responder", (req, res) => {
+  
+  var perguntaID = req.body.pergunta;
+  var corpo = req.body.corpo;
+
+  Resposta.create({
+    perguntaID: perguntaID,
+    corpo: corpo
+  }). then(() => {
+    res.redirect(`/perguntar/${perguntaID}`);
+  });
 })
 
 app.listen(8080, () => {
